@@ -14,7 +14,7 @@ script:
 
 after_succes:
         # logging credentials
-         - echo "$DOCKER_PASSWORD" | docker login --username "$DOCKER_USERNAME" --password-stdin;
+         - echo "$DOCKER_PASSWORD" | docker login --username "$DOCKER_USERNAME" --password-stdin
 
         # pushing
         - docker push iainmosima/udagram-api-feed:v1
