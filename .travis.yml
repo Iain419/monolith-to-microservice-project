@@ -1,17 +1,19 @@
 # Building all the images
-- docker-compose up
+script:
+        - docker-compose up
 
-# Tagging
-- docker tag udagram-api-feed iainmosima/udagram-api-feed:v1
-- docker tag udagram-api-user iainmosima/udagram-api-user:v1
-- docker tag udagram-api-frontend iainmosima/udagram-frontend:v1
-- docker tag udagram-reverseproxy iainmosima/udagram-reverseproxy:v1
+        # Tagging
+        - docker tag udagram-api-feed iainmosima/udagram-api-feed:v1
+        - docker tag udagram-api-user iainmosima/udagram-api-user:v1
+        - docker tag udagram-api-frontend iainmosima/udagram-frontend:v1
+        - docker tag udagram-reverseproxy iainmosima/udagram-reverseproxy:v1
 
-# logging credentials
-- echo "$DOCKER_PASSWORD" | docker loging -u "$DOCKER_USERNAME" --password-stdin
+after_succes:
+        # logging credentials
+        - echo "$DOCKER_PASSWORD" | docker loging -u "$DOCKER_USERNAME" --password-stdin
 
-# pushing
-- docker push iainmosima/udagram-api-feed:v1
-- docker push iainmosima/udagram-api-user:v1
-- docker push iainmosima/udagram-frontend:v1
-- docker push iainmosima/udagram-reverseproxy:v1
+        # pushing
+        - docker push iainmosima/udagram-api-feed:v1
+        - docker push iainmosima/udagram-api-user:v1
+        - docker push iainmosima/udagram-frontend:v1
+        - docker push iainmosima/udagram-reverseproxy:v1
