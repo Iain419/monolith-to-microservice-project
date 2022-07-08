@@ -14,11 +14,12 @@ script:
 
 after_succes:
         # logging credentials
-         - echo "$DOCKER_PASSWORD" | docker login --username "$DOCKER_USERNAME" --password-stdin
+        - echo "$DOCKER_PASSWORD" | docker loging -username "$DOCKER_USERNAME" --password-stdin
 
         # pushing
         - docker push iainmosima/udagram-api-feed:v1
         - docker push iainmosima/udagram-api-user:v1
         #- docker push iainmosima/udagram-frontend:v1
         - docker push iainmosima/udagram-reverseproxy:v1
+
 
