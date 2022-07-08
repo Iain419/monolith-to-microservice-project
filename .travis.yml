@@ -1,6 +1,6 @@
 # Building all the images
 script:
-        - docker-compose up
+        - docker-compose create
 
         # Tagging
         - docker tag udagram-api-feed iainmosima/udagram-api-feed:v1
