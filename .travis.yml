@@ -1,7 +1,7 @@
 # Building all the images
 script: 
-        - docker build -t udagram-frontend ./udagram-frontend
-        - docker tag udagram-api-frontend:latest iainmosima/udagram-frontend:v1
+        - docker build -t iainmosima/udagram-frontend ./udagram-frontend
+        #- docker tag udagram-api-frontend:latest iainmosima/udagram-frontend:v1
 
         - docker build -t udagram-api-feed ./udagram-api-feed
         - docker tag udagram-api-feed iainmosima/udagram-api-feed:v1
