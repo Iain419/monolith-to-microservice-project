@@ -19,7 +19,7 @@ after_succes:
         # pushing
         - docker push iainmosima/udagram-api-feed:v1
         - docker push iainmosima/udagram-api-user:v1
-        #- docker push iainmosima/udagram-frontend:v1
+        - docker push iainmosima/udagram-frontend:v1
         - docker push iainmosima/udagram-reverseproxy:v1
 
 
