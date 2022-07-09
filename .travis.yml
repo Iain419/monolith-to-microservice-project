@@ -9,7 +9,7 @@ script:
         # Tagging
         - docker tag udagram-api-feed iainmosima/udagram-api-feed:v1
         - docker tag udagram-api-user iainmosima/udagram-api-user:v1
-         # - docker tag udagram-api-frontend iainmosima/udagram-frontend:v1
+        - docker tag udagram-api-frontend:v1 iainmosima/udagram-frontend:v1
         - docker tag udagram-reverseproxy iainmosima/udagram-reverseproxy:v1
 
 after_succes:
