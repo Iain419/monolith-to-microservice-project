@@ -4,21 +4,21 @@ kind: Deployment
 
 metadata:
 
-  name: udagram-frontend-deployment
+  name: reverseproxy-deployment
 
   labels:
 
-    app: udagram-frontend
+    app: reverseproxy
 
 spec:
 
-  replicas: 3
+  replicas: 1
 
   selector:
 
     matchLabels:
 
-      app: udagram-frontend
+      app: reverseproxy 
 
   template:
 
@@ -26,17 +26,16 @@ spec:
 
       labels:
 
-        app: udagram-frontend
+        app: reverseproxy
 
     spec:
 
       containers:
 
-      - name: udagram-frontend
+      - name: reverseproxy
 
-        image: iainmosima/udagram-frontend
+        image: iainmosima/udagram-reverseproxy
 
         ports:
 
         - containerPort: 80
-

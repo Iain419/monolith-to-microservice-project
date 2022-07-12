@@ -1,22 +1,67 @@
 apiVersion: apps/v1
+
 kind: Deployment
+
 metadata:
-  name: udagram-api-feed
+
+  name: udagram-api-feed-deployment
+
   labels:
+
     app: udagram-api-feed
+
 spec:
-  replicas: 2
+
+  replicas: 1
+
   selector:
+
     matchLabels:
+
       app: udagram-api-feed
+
   template:
+
     metadata:
+
       labels:
+
         app: udagram-api-feed
+
     spec:
+
       containers:
+
       - name: udagram-api-feed
+
         image: iainmosima/udagram-api-feed
+
         ports:
-        - containerPort: 81
+
+        - containerPort: 80
+      
+        # livenessProbe:
+        #     httpGet:
+        #             path: /health
+        #             port: 8080     
+        #     initialDelaySeconds: 20
+        #     periodSeconds: 30
+        #     timeoutSeconds: 30
+        
+
+        envFrom:
+          - configMapRef:
+              name: env-secret
+              
+          - configMapRef:
+              name: env-configmap
+          
+          - secretRef: 
+              name: aws-secret
+        
+       
+      
+  
+  
+
 
